@@ -10,6 +10,7 @@ if (process.env.NODE_ENV === 'development') {
     path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env',
   })
 }
+
 async function auth(req: Request, res: Response, next: NextFunction) {
   const authHeader:string | undefined = req.header('Authorization');
 
