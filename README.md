@@ -31,8 +31,7 @@
 <h3>Pré-requisitos</h3>
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [PostgreSQL](https://www.postgresql.org/),[Docker](https://hub.docker.com/).
-Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [PostgreSQL](https://www.postgresql.org/) ou [Docker](https://hub.docker.com/).
 
 <h3 id="instalacao">Instalação e rodar com o app sem docker</h3>
 
@@ -124,7 +123,7 @@ $ npm run test-stress || yarn test-stress
 $ docker exec -it <id do container> sh -c "npm run test" 
 
 # Executar testes de estresse na API
-$ docker exec -it <id do container> sh -c "test-stress"
+$ docker exec -it <id do container> sh -c "npm run test-stress"
 
 ```
 

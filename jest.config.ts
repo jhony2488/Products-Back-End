@@ -1,5 +1,5 @@
-const { compilerOptions } = require('./tsconfig.json')
-import { pathsToModuleNameMapper } from 'ts-jest/utils'
+const { compilerOptions } = require('./tsconfig.json');
+import { pathsToModuleNameMapper } from 'ts-jest/utils';
 /*
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/en/configuration.html
@@ -22,12 +22,7 @@ export default {
   collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  collectCoverageFrom: [
-    'src/app/***',
-    'src/config/***',
-    '!src/database/migrations',
-    './src/*',
-  ],
+  collectCoverageFrom: ['src/app/***', 'src/config/***', '!src/database/migrations', './src/*'],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: './__tests__/coverage',
@@ -73,7 +68,11 @@ export default {
   // globalTeardown: undefined,
 
   // A set of global variables that need to be available in all test environments
-  // globals: {},
+  globals: {
+    'ts-jest': {
+      useESM: true,
+    },
+  },
 
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
   // maxWorkers: "50%",
@@ -193,4 +192,4 @@ export default {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-}
+};

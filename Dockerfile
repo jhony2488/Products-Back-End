@@ -1,11 +1,10 @@
-FROM node:18
+FROM node:latest
 
 WORKDIR /src
 
 COPY package.json ./
 
 RUN npm install
-RUN npm rebuild bcrypt
 
 COPY . .
 
