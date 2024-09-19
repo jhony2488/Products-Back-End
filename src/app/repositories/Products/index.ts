@@ -12,15 +12,15 @@ export class ProductRepository implements IProductRepository {
   }
 
   async save(data: PropsProducts) {
-    const reservation = await new Product();
+    const product = await new Product();
 
-    reservation.produto = data.produto;
-    reservation.categoria = data.categoria;
-    reservation.preço = data.preço;
-    reservation.quantidade = data.quantidade;
+    product.produto = data.produto;
+    product.categoria = data.categoria;
+    product.preço = data.preço;
+    product.quantidade = data.quantidade;
 
-    await this.repository.save(reservation);
-    return reservation;
+    await this.repository.save(product);
+    return product;
   }
   async find(): Promise<any> {
     const result = this.repository.find();
@@ -39,27 +39,27 @@ export class ProductRepository implements IProductRepository {
     return !result || result == null ? [] : result;
   }
   async update(id: number, data: PropsProducts): Promise<any> {
-    const reservation = await this.repository.findOneBy({ id });
+    const product = await this.repository.findOneBy({ id });
 
-    if (reservation == null || !reservation) {
+    if (product == null || !product) {
       return null;
     }
 
-    reservation.produto = data.produto;
-    reservation.categoria = data.categoria;
-    reservation.preço = data.preço;
-    reservation.quantidade = data.quantidade;
+    product.produto = data.produto;
+    product.categoria = data.categoria;
+    product.preço = data.preço;
+    product.quantidade = data.quantidade;
 
-    await this.repository.save(reservation);
-    return reservation;
+    await this.repository.save(product);
+    return product;
   }
   async delete(id: number): Promise<any> {
-    const reservation = await this.repository.findOneBy({ id });
+    const product = await this.repository.findOneBy({ id });
 
-    if (reservation == null || !reservation) {
+    if (product == null || !product) {
       return null;
     }
 
-    return this.repository.remove(reservation);
+    return this.repository.remove(product);
   }
 }
