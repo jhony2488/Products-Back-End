@@ -18,6 +18,7 @@ export class ProductRepository implements IProductRepository {
     product.categoria = data.categoria;
     product.preço = data.preço;
     product.quantidade = data.quantidade;
+    product.created_at = new Date();
 
     await this.repository.save(product);
     return product;
